@@ -2,57 +2,46 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        AlunoManager manager = new AlunoManager();
-        int opcao;
+        Scanner in = new Scanner(System.in);
+        Sistema sistema = new Sistema();
+        int op;
 
         do {
-            System.out.println("\n--- SISTEMA DE CADASTRO DE ALUNOS ---");
-            System.out.println("1. Adicionar aluno");
-            System.out.println("2. Listar alunos");
-            System.out.println("3. Buscar por matrícula");
-            System.out.println("4. Calcular média da turma");
-            System.out.println("0. Sair");
-            System.out.print("Escolha: ");
-            opcao = sc.nextInt();
-            sc.nextLine(); // limpar buffer
+            System.out.println("\n--- MENU ---");
+            System.out.println("1 - Cadastrar aluno");
+            System.out.println("2 - Ver todos");
+            System.out.println("3 - Buscar por RA");
+            System.out.println("4 - Média da turma");
+            System.out.println("0 - Sair");
+            System.out.print("Opção: ");
+            op = in.nextInt();
+            in.nextLine();
 
-            switch (opcao) {
-                case 1:
-                    System.out.print("Nome: ");
-                    String nome = sc.nextLine();
-                    System.out.print("Matrícula: ");
-                    String matricula = sc.nextLine();
-                    System.out.print("Nota: ");
-                    double nota = sc.nextDouble();
-                    manager.adicionarAluno(nome, matricula, nota);
-                    System.out.println("Aluno cadastrado!");
-                    break;
-                case 2:
-                    manager.listarAlunos();
-                    break;
-                case 3:
-                    System.out.print("Digite a matrícula: ");
-                    String busca = sc.nextLine();
-                    Aluno encontrado = manager.buscarPorMatricula(busca);
-                    if (encontrado != null) {
-                        System.out.println("Aluno encontrado: " + encontrado);
-                    } else {
-                        System.out.println("Aluno não encontrado.");
-                    }
-                    break;
-                case 4:
-                    double media = manager.calcularMedia();
-                    System.out.printf("Média da turma: %.2f\n", media);
-                    break;
-                case 0:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
+            if (op == 1) {
+                System.out.print("Nome: ");
+                String nome = in.nextLine();
+                System.out.print("RA: ");
+                String ra = in.nextLine();
+                System.out.print("Nota: ");
+                double nota = in.nextDouble();
+                sistema.adicionar(nome, ra, nota);
+                System.out.println("Aluno adicionado!");
+            } else if (op == 2) {
+                sistema.mostrarTodos();
+            } else if (op == 3) {
+                System.out.print("RA do aluno: ");
+                String busca = in.nextLine();
+                sistema.buscarPorRA(busca);
+            } else if (op == 4) {
+                sistema.mediaNotas();
+            } else if (op == 0) {
+                System.out.println("Encerrando...");
+            } else {
+                System.out.println("Opção inválida.");
             }
-        } while (opcao != 0);
 
-        sc.close();
+        } while (op != 0);
+
+        in.close();
     }
 }
