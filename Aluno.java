@@ -11,7 +11,7 @@ public class Aluno {
 
 
 
-    
+
     public Aluno(String nome, String ra, double nota) {
         this.nome = nome;
         this.ra = ra;
