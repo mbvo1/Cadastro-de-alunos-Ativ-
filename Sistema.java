@@ -7,8 +7,6 @@ public class Sistema {
         Aluno novo = new Aluno(nome, ra, nota);
         lista.add(novo);
     }
-
-    
     public void mostrarTodos() {
         if (lista.isEmpty()) {
             System.out.println("Nenhum aluno cadastrado.");
