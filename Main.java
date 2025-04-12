@@ -5,9 +5,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Sistema sistema = new Sistema();
         int op;
-
-
-
+        
         do{
             System.out.println("\n--- MENU ---");
             System.out.println("1 - Cadastrar aluno");
