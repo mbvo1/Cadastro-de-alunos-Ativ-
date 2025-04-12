@@ -11,8 +11,6 @@ public class Sistema {
         if (lista.isEmpty()) {
             System.out.println("Nenhum aluno cadastrado.");
             return;
-
-
         }
         for (Aluno a : lista) {
             System.out.println(a);
