@@ -8,7 +8,6 @@ public class Aluno {
         this.ra = ra;
         this.nota = nota;
     }
-
     public String toString() {
         return "Nome: " + nome + ", RA: " + ra + ", Nota: " + nota;
     }
