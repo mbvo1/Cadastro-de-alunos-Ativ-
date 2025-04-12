@@ -15,8 +15,6 @@ public class Sistema {
 
 
 
-
-
         }
         for (Aluno a : lista) {
             System.out.println(a);
