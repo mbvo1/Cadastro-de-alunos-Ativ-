@@ -12,11 +12,6 @@ public class Main {
 
 
 
-
-
-
-
-
         do{
             System.out.println("\n--- MENU ---");
             System.out.println("1 - Cadastrar aluno");
