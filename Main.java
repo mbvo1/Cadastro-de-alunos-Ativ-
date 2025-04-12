@@ -6,7 +6,7 @@ public class Main {
         Sistema sistema = new Sistema();
         int op;
 
-        do {
+        do{
             System.out.println("\n--- MENU ---");
             System.out.println("1 - Cadastrar aluno");
             System.out.println("2 - Ver todos");
