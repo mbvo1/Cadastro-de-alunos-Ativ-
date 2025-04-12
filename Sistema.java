@@ -13,8 +13,6 @@ public class Sistema {
             return;
 
 
-
-
         }
         for (Aluno a : lista) {
             System.out.println(a);
