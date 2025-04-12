@@ -11,9 +11,7 @@ public class Aluno {
 
 
 
-
-
-        
+      
     }
     public String toString() {
         return "Nome: " + nome + ", RA: " + ra + ", Nota: " + nota;
